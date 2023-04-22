@@ -10,13 +10,18 @@ import FooterSection from "@/components/footer-section";
 import ScrollToTopButton from "@/components/scroll-to-top-button";
 import Preloader from "@/components/preloader";
 
-import '@/styles/globals.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import '@/styles/lineicons.css'
+
+import '@/styles/globals.scss'
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const router = useRouter()
 
   useEffect(() => {
+    import("bootstrap/dist/js/bootstrap.js");
+
     const showLoader = () => {
       setIsLoading(true);
     };
@@ -24,6 +29,8 @@ export default function App({ Component, pageProps }: AppProps) {
     const removeLoader = () => {
       setIsLoading(false);
     };
+
+    setTimeout(() => removeLoader(), 800)
 
     Router.events.on("routeChangeStart", showLoader);
     Router.events.on("routeChangeComplete", removeLoader);
@@ -52,7 +59,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <title>SkyNet | Cyber Arena</title>
       <meta name="description" content="description" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="viewport" content="initial-scale=1, width=device-width" />
       <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     </Head>
 

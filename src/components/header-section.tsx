@@ -1,25 +1,47 @@
 import Image from "next/image";
 import MainMenu from "@/components/main-menu/main-menu";
+import React, {useEffect, useRef, useState} from "react";
 
 const HeaderSection = () => {
+    const [isNavbarSticky, setIsNavbarSticky] = useState(false);
+    const navbarAreaEl = useRef(null) as React.MutableRefObject<HTMLDivElement>
+
+    function fixNavBar() {
+        if (navbarAreaEl.current) {
+            setIsNavbarSticky(window.pageYOffset > navbarAreaEl.current.offsetTop)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', fixNavBar);
+
+        return () => {
+            window.removeEventListener('scroll', fixNavBar);
+        }
+    }, []);
+
     return (
         <header className={`header`}>
-            <div className={`navbar-area`}>
+            <div ref={navbarAreaEl} className={`navbar-area ${isNavbarSticky ? 'sticky' : ''}`}>
                 <div className={`container`}>
-                    <nav>
-                        <a href="#">
-                            <Image
-                                src={`https://i.imgur.com/DgUzIz7.png`}
-                                alt={`logo`}
-                                width={180}
-                                height={71.25}
-                                style={{
-                                    maxWidth: '100%',
-                                    height: 'auto'
-                                }} />
-                        </a>
-                        <MainMenu/>
-                    </nav>
+                    <div className={`row align-items-center`}>
+                        <div className={`col-xl-12`}>
+                            <nav className={`navbar navbar-expand-lg`}>
+                                <a href="#" className={`navbar-brand`}>
+                                    <Image
+                                        src={`https://i.imgur.com/HL6fKBT.png`}
+                                        alt={`logo`}
+                                        width={180}
+                                        height={55.2}
+                                        style={{
+                                            maxWidth: '100%',
+                                            height: 'auto'
+                                        }}/>
+                                </a>
+                                <MainMenu/>
+                            </nav>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>

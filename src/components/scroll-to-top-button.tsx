@@ -21,8 +21,8 @@ const ScrollToTopButton = () => {
     return (
         <>
             {hasScrollToTopButton && (
-                <a href="#" className="a">
-                    <i className="b">a</i>
+                <a href="#" className="scroll-top btn-hover">
+                    <i className="lni lni-chevron-up"></i>
                 </a>
             )}
         </>

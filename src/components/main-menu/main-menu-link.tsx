@@ -1,7 +1,7 @@
 
 const MainMenuLink = () => {
     return (
-        <li>
+        <li className={`nav-item`}>
             <a href="#">Label</a>
         </li>
     )
