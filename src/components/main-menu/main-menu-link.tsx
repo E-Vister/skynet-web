@@ -1,8 +1,8 @@
 
-const MainMenuLink = () => {
+const MainMenuLink = ({url, label}) => {
     return (
         <li className={`nav-item`}>
-            <a href="#">Label</a>
+            <a className={`page-scroll`} href={`/${url}`}>{label}</a>
         </li>
     )
 }

@@ -29,10 +29,10 @@ const HeaderSection = () => {
                             <nav className={`navbar navbar-expand-lg`}>
                                 <a href="#" className={`navbar-brand`}>
                                     <Image
-                                        src={`https://i.imgur.com/HL6fKBT.png`}
+                                        src={`https://i.imgur.com/gO1h2LI.png`}
                                         alt={`logo`}
                                         width={180}
-                                        height={55.2}
+                                        height={90}
                                         style={{
                                             maxWidth: '100%',
                                             height: 'auto'
