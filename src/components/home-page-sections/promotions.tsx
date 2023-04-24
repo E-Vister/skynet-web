@@ -58,16 +58,21 @@ const Promotions = () => {
     return (
         <section id={`promotions`} className={`promotions-section`}>
             <div className={`container`}>
-                <div className={`row justify-content-center`}>
-                    <div className={`col-xl-7 col-lg-9`}>
+                <div className={`promotions-content row align-items-center gx-5 d-flex`}>
+                    <div className={`promotions-carousel d-flex col-xl-5 col-lg-5`}>
                         <Carousel ride={`carousel`} previous={previous} next={next} activeIndex={activeIndex}>
                             <CarouselIndicators items={items}
                                                 activeIndex={activeIndex}
-                                                onClickHandler={goToIndex} />
+                                                onClickHandler={goToIndex}/>
                             {slides}
-                            <CarouselControl directionText="Prev" direction="prev" onClickHandler={previous} />
-                            <CarouselControl directionText="Next" direction="next" onClickHandler={next} />
+                            <CarouselControl directionText="Prev" direction="prev" onClickHandler={previous}/>
+                            <CarouselControl directionText="Next" direction="next" onClickHandler={next}/>
                         </Carousel>
+                    </div>
+                    <div className={`promotions-title col-xl-7 col-lg-7`}>
+                        <h1>Актуальные акции</h1>
+                        <p>Нельзя просто так пойти в <span>SKYNET</span> не воспользоваться акциями! Пополняй карту,
+                            получай большой <span>CАSH BACK</span> и играй ещё больше.</p>
                     </div>
                 </div>
             </div>

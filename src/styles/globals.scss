@@ -430,10 +430,10 @@ h6 {
 .navbar-brand {
   padding: 0;
   display: flex;
-}
 
-.navbar-brand img {
-  max-width: 180px;
+  img {
+    max-width: 180px;
+  }
 }
 
 .navbar-toggler {
@@ -469,6 +469,41 @@ h6 {
   align-items: center;
   background: linear-gradient(180deg, #210256 0%, rgba(255, 255, 255, 0) 93.47%);
   z-index: 1;
+
+  .hero-content {
+    max-width: 640px;
+
+    h1 {
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 30px;
+      color: rgb(255, 255, 255);
+      font-size: 18px;
+
+      span {
+        font-weight: 600;
+        color: #1889FF;
+      }
+    }
+  }
+
+  .hero-image {
+    padding-top: 50px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 600px solid #000F27;
+    border-left: 600px solid transparent;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
@@ -488,18 +523,6 @@ h6 {
     height: auto;
     padding: 100px 0;
   }
-}
-
-.hero-section::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 600px solid #000F27;
-  border-left: 600px solid transparent;
-  right: 0;
-  top: 0;
-  z-index: -1;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
@@ -528,31 +551,6 @@ h6 {
   }
 }
 
-.hero-section {
-  .hero-content {
-    max-width: 640px;
-
-    h1 {
-      margin-bottom: 15px;
-    }
-
-    p {
-      margin-bottom: 30px;
-      color: rgb(255, 255, 255);
-      font-size: 18px;
-
-      span {
-        font-weight: 600;
-        color: #1889FF;
-      }
-    }
-  }
-
-  .hero-image {
-    padding-top: 50px;
-  }
-}
-
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .hero-section .hero-content h1 {
     font-size: 50px;
@@ -571,6 +569,70 @@ h6 {
   }
 }
 
+/* Promotions CSS */
+
+.promotions-section {
+  position: relative;
+  padding-top: 170px;
+  padding-bottom: 65px;
+  background: linear-gradient(-90deg, rgba(33, 2, 86, 0.32) 0%, rgba(255, 255, 255, 0) 53.47%);
+
+  .promotions-title {
+    h1 {
+      margin-bottom: 5px;
+    }
+
+    p {
+      span {
+        font-weight: 600;
+        color: #1889FF;
+      }
+    }
+
+    line-height: 20px;
+    max-width: 640px;
+  }
+
+  .carousel.slide {
+    max-width: 550px;
+    height: auto;
+    border-radius: 15px;
+
+    img {
+      max-width: 550px;
+      height: auto;
+      border-radius: 15px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .promotions-content {
+    flex-direction: column-reverse;
+
+    .promotions-carousel {
+      justify-content: center;
+    }
+
+    .promotions-title {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .promotions-section {
+    padding-top: 80px;
+    border-radius: 0;
+
+    p {
+      font-size: 18px;
+      line-height: 28px;
+      padding: 0;
+    }
+  }
+}
+
 /* Footer CSS */
 .footer {
   .footer-widget {
@@ -579,6 +641,21 @@ h6 {
     .contacts {
       display: flex;
       flex-direction: column;
+
+      span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+          margin-right: 3px;
+          color: #fff;
+          border-radius: 29px;
+          background-color: rgba(0, 114, 255, 0.31);
+          box-shadow: 0 0 25px #0072ff, 0 0 50px #0072ff, 0 0 75px #0072ff,
+          0 0 100px #0072ff;
+        }
+      }
     }
 
     .logo {
@@ -644,67 +721,11 @@ h6 {
   }
 }
 
-/* Promotions CSS */
-
-.promotions-section {
-  position: relative;
-  background-image: url("/public/images/common-bg.svg");
-  background-size: cover;
-  background-position: bottom center;
-  padding-top: 60px;
-
-  .carousel.slide {
-    max-width: 550px;
-    height: auto;
-    border-radius: 15px;
-
-    img {
-      max-width: 550px;
-      height: auto;
-      border-radius: 15px;
+@media only screen and (max-width: 428px) {
+  .footer .contacts {
+    i {
+      display: none;
     }
-  }
-}
-
-@media only screen and (min-width: 1200px) and (max-width: 1399px) {
-  .promotions-section {
-    border-radius: 200px 0;
-  }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .promotions-section {
-    border-radius: 100px 0;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
-  .promotions-section {
-    border-radius: 70px 0;
-  }
-}
-
-.promotions-section .promotion-active-wrapper {
-  position: relative;
-}
-
-@media (max-width: 767px) {
-  .promotions-section .promotion-active-wrapper {
-    padding-bottom: 80px;
-  }
-}
-
-@media (max-width: 767px) {
-  .promotions-section .promotion-active-wrapper .tns-controls {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 767px) {
-  .promotions-section .promotion-active-wrapper .single-testimonial .content p {
-    font-size: 18px;
-    line-height: 28px;
-    padding: 0;
   }
 }
 
