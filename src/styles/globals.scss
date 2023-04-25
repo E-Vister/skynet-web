@@ -146,7 +146,6 @@ h6 {
   padding: 18px 28px;
   font-size: 18px;
   line-height: 1;
-  border-radius: 10px;
   color: #fff;
   cursor: pointer;
   z-index: 5;
@@ -154,62 +153,68 @@ h6 {
   border: 2px solid transparent;
   background: #1889FF;
   overflow: hidden;
-}
+  box-shadow: 0 0 20px 5px rgba(24,137,255,.7);
 
-.main-btn:hover {
-  color: #fff;
-}
+  &.border-btn {
+    border: 2px solid #37C2CC;
+    background: transparent;
+    color: #37C2CC;
 
-.main-btn.border-btn {
-  border: 2px solid #37C2CC;
-  background: transparent;
-  color: #37C2CC;
-}
+    &:hover::after {
+      background-color: rgba(45, 210, 224, 0.38);
+    }
+  }
 
-.main-btn.border-btn:hover::after {
-  background-color: rgba(45, 210, 224, 0.38);
+  &:focus {
+    box-shadow: 0 0 18px 6px rgba(24,137,255,.85);
+  }
+
+  &:hover {
+    color: #fff;
+  }
 }
 
 .btn-hover {
   position: relative;
   overflow: hidden;
-}
 
-.btn-hover::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.1);
-  top: 50%;
-  left: 50%;
-  padding: 50%;
-  z-index: -1;
-  -webkit-transition: all 0.3s ease-out 0s;
-  -moz-transition: all 0.3s ease-out 0s;
-  -ms-transition: all 0.3s ease-out 0s;
-  -o-transition: all 0.3s ease-out 0s;
-  transition: all 0.3s ease-out 0s;
-  -webkit-transform: translate3d(-50%, -50%, 0) scale(0);
-  -moz-transform: translate3d(-50%, -50%, 0) scale(0);
-  -ms-transform: translate3d(-50%, -50%, 0) scale(0);
-  -o-transform: translate3d(-50%, -50%, 0) scale(0);
-  transform: translate3d(-50%, -50%, 0) scale(0);
-}
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    top: 50%;
+    left: 50%;
+    padding: 50%;
+    z-index: -1;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+    -webkit-transform: translate3d(-50%, -50%, 0) scale(0);
+    -moz-transform: translate3d(-50%, -50%, 0) scale(0);
+    -ms-transform: translate3d(-50%, -50%, 0) scale(0);
+    -o-transform: translate3d(-50%, -50%, 0) scale(0);
+    transform: translate3d(-50%, -50%, 0) scale(0);
+  }
 
-.btn-hover:hover::after {
-  -webkit-transform: translate3d(-50%, -50%, 0) scale(1.3);
-  -moz-transform: translate3d(-50%, -50%, 0) scale(1.3);
-  -ms-transform: translate3d(-50%, -50%, 0) scale(1.3);
-  -o-transform: translate3d(-50%, -50%, 0) scale(1.3);
-  transform: translate3d(-50%, -50%, 0) scale(1.3);
+  &:hover::after {
+    -webkit-transform: translate3d(-50%, -50%, 0) scale(1.3);
+    -moz-transform: translate3d(-50%, -50%, 0) scale(1.3);
+    -ms-transform: translate3d(-50%, -50%, 0) scale(1.3);
+    -o-transform: translate3d(-50%, -50%, 0) scale(1.3);
+    transform: translate3d(-50%, -50%, 0) scale(1.3);
+  }
 }
 
 .scroll-top {
   width: 40px;
   height: 40px;
   background: rgba(24, 137, 255, 0.6);
+  box-shadow: 0 0 20px 3px rgba(24, 137, 255,.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -573,8 +578,8 @@ h6 {
 
 .promotions-section {
   position: relative;
-  padding-top: 170px;
-  padding-bottom: 65px;
+  padding-top: 160px;
+  padding-bottom: 75px;
   background: linear-gradient(-90deg, rgba(33, 2, 86, 0.32) 0%, rgba(255, 255, 255, 0) 53.47%);
 
   .promotions-title {
@@ -622,7 +627,7 @@ h6 {
 
 @media (max-width: 767px) {
   .promotions-section {
-    padding-top: 80px;
+    padding-top: 115px;
     border-radius: 0;
 
     p {
@@ -674,9 +679,11 @@ h6 {
         width: 44px;
         height: 44px;
         border-radius: 50%;
-        background: transparent;
-        border: 2px solid rgba(24, 137, 255, 0.6);
-        color: rgba(24, 137, 255, 0.6);
+        border: 2px solid #fff;
+        color: #fff;
+        background-color: rgba(0, 114, 255, 0.55);
+        box-shadow: 0 0 8px #0072ff, 0 0 8px #0072ff, 0 0 10px #0072ff,
+        0 0 10px #0072ff;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -684,7 +691,7 @@ h6 {
         font-size: 22px;
 
         &:hover {
-          background: rgba(24, 137, 255, 0.6);
+          background: rgba(24, 137, 255, 0.7);
           color: #000F27;
           border: 2px solid transparent;
         }

@@ -14,7 +14,7 @@ const Hero = () => {
                                 клуба, <span>4 Отдельных буткемпа</span> по <span>5 машин</span>, Мониторы в <span>Full HD</span> разрешении <span>144Hz</span> и <span>240Hz</span> и
                                 многое другое. Залетай в наш киберспортивный, игровой клуб и катай в любимые игры
                             </p>
-                            <a href="#" className={`main-btn btn-hover`}>Забронировать место</a>
+                            <a href="#" className={`main-btn btn-hover`}><strong>ЗАБРОНИРОВАТЬ МЕСТО</strong></a>
                         </div>
                     </div>
                     <div className={`col-xxl-6 col-xl-6 col-lg-6`}>
