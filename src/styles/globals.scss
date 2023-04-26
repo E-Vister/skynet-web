@@ -707,11 +707,11 @@ h6 {
       font-size: 16px;
       line-height: 30px;
       color: rgb(255, 255, 255);
-    }
 
-    .links li a:hover {
-      padding-left: 8px;
-      color: #37C2CC;
+      &:hover {
+        padding-left: 8px;
+        color: #37C2CC;
+      }
     }
   }
 }
