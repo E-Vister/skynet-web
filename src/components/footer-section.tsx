@@ -29,7 +29,7 @@ const FooterSection = () => {
                                     <a href="/#promotions">Акции</a>
                                 </li>
                                 <li>
-                                    <a href="#">Цены</a>
+                                    <a href="/#prices">Цены</a>
                                 </li>
                                 <li>
                                     <a href="#">Железо</a>

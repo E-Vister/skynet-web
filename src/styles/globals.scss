@@ -620,6 +620,7 @@ h6 {
     }
 
     .promotions-title {
+      padding-left: 0;
       margin-bottom: 30px;
     }
   }
@@ -634,6 +635,74 @@ h6 {
       font-size: 18px;
       line-height: 28px;
       padding: 0;
+    }
+  }
+}
+
+/* Prices CSS */
+
+.prices-section {
+  position: relative;
+  padding-top: 130px;
+  padding-bottom: 85px;
+  background: linear-gradient(90deg, rgba(33, 2, 86, 0.32) 0%, rgba(255, 255, 255, 0) 53.47%);
+
+  .single-price {
+    width: 200px;
+    height: 400px;
+    margin-bottom: 45px;
+    display: flex;
+    flex-direction: column;
+
+
+    .price-title {
+      width: 200px;
+      box-shadow: 0 0 18px 3px rgba(24, 105, 255, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70px;
+      margin: 0;
+      align-self: center;
+      background: rgb(24, 105, 255);
+    }
+
+    .tag {
+      display: flex;
+      max-width: 200px;
+      margin: 10px 2px 0 2px;
+      padding: 2px 0;
+      border-bottom: 1px solid rgba(15, 58, 148, .5);
+
+      &.dark {
+        .tag-price {
+          background: rgb(15, 58, 148);
+        }
+      }
+    }
+
+    .tag-header {
+      background-color: transparent;
+      height: 50px;
+      width: 50%;
+      text-transform: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .tag-price {
+      font-size: 22px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgb(24, 105, 255);
+      box-shadow: 0 0 16px 1px rgba(24, 105, 255, 0.6);
+      width: 78px;
+      border-radius: 5px;
+      padding: 2px 5px;
+      margin: 5px auto;
     }
   }
 }

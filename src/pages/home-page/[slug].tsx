@@ -4,6 +4,7 @@ import Head from "next/head";
 import Preloader from "@/components/preloader";
 import Hero from "@/components/home-page-sections/hero";
 import Promotions from "@/components/home-page-sections/promotions";
+import Prices from "@/components/home-page-sections/prices";
 
 const HomePage = () => {
     const router = useRouter();
@@ -24,6 +25,7 @@ const HomePage = () => {
 
             <Hero/>
             <Promotions/>
+            <Prices/>
         </>
     )
 }
