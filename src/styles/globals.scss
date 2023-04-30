@@ -620,15 +620,20 @@ h6 {
     }
 
     .promotions-title {
-      padding-left: 0;
       margin-bottom: 30px;
     }
   }
 }
 
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  .promotions-title {
+    padding-left: 0;
+  }
+}
+
 @media (max-width: 767px) {
   .promotions-section {
-    padding-top: 115px;
+    padding-top: 75px;
     border-radius: 0;
 
     p {
@@ -704,6 +709,12 @@ h6 {
       padding: 2px 5px;
       margin: 5px auto;
     }
+  }
+}
+
+@media (max-width: 767px) {
+  .prices-section {
+    padding-top: 75px;
   }
 }
 
