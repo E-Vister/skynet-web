@@ -1,5 +1,5 @@
 import MainMenuLink from "@/components/main-menu/main-menu-link";
-import React, { useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 const MainMenu = () => {
     const links = [
@@ -10,9 +10,40 @@ const MainMenu = () => {
         {url: `#games`, label: `Игры`},
         {url: `#contacts`, label: `Контакты`},
     ];
-
     const [isMenuActive, setMenuActive] = useState(false);
+    const [activeMenuLink, setActiveMenuLink] = useState(links.length ? links[0].url : '');
     const menuLinksEl = useRef(null) as React.MutableRefObject<HTMLDivElement>;
+
+    function highlightLinks() {
+        const sections = document.querySelectorAll('.page-scroll');
+        const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
+        sections.forEach((currLink) => {
+            const val = currLink.getAttribute('href').slice(1);
+            if (val[0] !== '#') {
+                return
+            }
+            const refElement = document.querySelector(val) as HTMLDivElement | null;
+
+            if (!refElement) {
+                return
+            }
+
+            const scrollTopMinus = scrollPos + 73;
+
+            if (refElement.offsetTop <= scrollTopMinus && (refElement.offsetTop + refElement.offsetHeight > scrollTopMinus)) {
+                setActiveMenuLink(val)
+            }
+        })
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', highlightLinks);
+
+        return () => {
+            window.removeEventListener('scroll', highlightLinks);
+        }
+    }, []);
 
     function inactivateMenu() {
         setMenuActive(false)
@@ -44,6 +75,7 @@ const MainMenu = () => {
                                 key={link.url}
                                 url={link.url}
                                 label={link.label}
+                                active={link.url === activeMenuLink}
                                 callbackOnClick={inactivateMenu}
                             />
                         ))}

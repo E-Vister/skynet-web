@@ -1,8 +1,8 @@
 
-const MainMenuLink = ({url, label}) => {
+const MainMenuLink = ({url, label, active, callbackOnClick}) => {
     return (
-        <li className={`nav-item`}>
-            <a className={`page-scroll`} href={`/${url}`}>{label}</a>
+        <li className={`nav-item`} onClick={callbackOnClick}>
+            <a className={`page-scroll ${active ? 'active' : ''}`} href={`/${url}`}>{label}</a>
         </li>
     )
 }
