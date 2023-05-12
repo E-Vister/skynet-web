@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const FooterSection = () => {
     return (
         <footer className={`footer pt-80`}>

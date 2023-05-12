@@ -1,4 +1,14 @@
-const PriceCol = ({label, prices}) => {
+export interface Prices {
+    amount: string,
+    value: number
+}
+
+export interface TimePackage {
+    label: string,
+    prices: Prices[]
+}
+
+const PriceCol = ({label, prices}: TimePackage) => {
     return (
         <div className={`col-sm col-md col-lg-4 col-xl`}>
             <div className={`single-price m-auto mb-5`}>

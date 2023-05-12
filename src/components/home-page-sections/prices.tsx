@@ -52,7 +52,6 @@ const Prices = () => {
         },
     ]
 
-
     return (
         <section id={`prices`} className={`prices-section`}>
             <div className={`container text-center`}>

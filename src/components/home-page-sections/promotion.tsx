@@ -1,6 +1,12 @@
 import Image from "next/image";
 
-const Promotion = ({src, alt, key}) => {
+export interface Promotion {
+    src: string,
+    alt: string,
+    key: string
+}
+
+const Promotion = ({src, alt, key}: Promotion) => {
     return (
         <Image src={src}
                alt={alt}

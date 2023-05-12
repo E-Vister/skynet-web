@@ -20,7 +20,9 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   useEffect(() => {
-    import("bootstrap/dist/js/bootstrap.js");
+    typeof document !== undefined
+        ? require("bootstrap/dist/js/bootstrap.js")
+        : null
 
     const showLoader = () => {
       setIsLoading(true);

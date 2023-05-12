@@ -50,7 +50,7 @@ const Promotions = () => {
         );
     });
 
-    const goToIndex = (newIndex) => {
+    const goToIndex = (newIndex: number) => {
         if (animating) return;
         setActiveIndex(newIndex);
     }

@@ -12,14 +12,17 @@ const MainMenu = () => {
     ];
     const [isMenuActive, setMenuActive] = useState(false);
     const [activeMenuLink, setActiveMenuLink] = useState(links.length ? links[0].url : '');
-    const menuLinksEl = useRef(null) as React.MutableRefObject<HTMLDivElement>;
+    const menuLinksEl = useRef<HTMLDivElement>(null!);
 
     function highlightLinks() {
         const sections = document.querySelectorAll('.page-scroll');
         const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
         sections.forEach((currLink) => {
-            const val = currLink.getAttribute('href').slice(1);
+            const val = currLink?.getAttribute('href')?.slice(1);
+
+            if (!val) return;
+
             if (val[0] !== '#') {
                 return
             }

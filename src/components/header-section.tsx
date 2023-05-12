@@ -4,7 +4,7 @@ import React, {useEffect, useRef, useState} from "react";
 
 const HeaderSection = () => {
     const [isNavbarSticky, setIsNavbarSticky] = useState(false);
-    const navbarAreaEl = useRef(null) as React.MutableRefObject<HTMLDivElement>
+    const navbarAreaEl = useRef<HTMLDivElement>(null!);
 
     function fixNavBar() {
         if (navbarAreaEl.current) {
